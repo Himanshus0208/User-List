@@ -11,11 +11,10 @@ const AddUser = () => {
     dob: "",
   });
   const [added, setAdded] = useState(false);
+  const [empty, setEmpty] = useState(false);
   const userCtx = useContext(UserContext);
 
   const handleChange = (e) => {
-    //let newUser = {...user,[e.target.name]: e.target.value }
-    
     setUser({ ...user, [e.target.name]: e.target.value });
   };
   const addToListHandler = () => {
@@ -24,7 +23,6 @@ const AddUser = () => {
   };
   return (
     <>
-    
       {added ? (
         <div className="container">
           <h1>Add New User</h1>
@@ -69,6 +67,15 @@ const AddUser = () => {
               />
             </div>
             <div className="form-group">
+              <label htmlFor="dob">Date of Birth:</label>
+              <input
+                type="date"
+                name="dob"
+                value={user.dob}
+                onChange={handleChange}
+              />
+            </div>
+            {/* <div className="form-group">
               <label>Date of Birth:</label>
               <input
                 type="text"
@@ -76,7 +83,7 @@ const AddUser = () => {
                 value={user.dob}
                 onChange={handleChange}
               />
-            </div>
+            </div> */}
 
             <button id="add-user-btn" type="button" onClick={addToListHandler}>
               Add to List

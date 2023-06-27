@@ -2,7 +2,7 @@ import { useReducer } from "react";
 import UserContext from "./user-context";
 
 const defaultUserState = {
-  users: [{ id: "1", fname: "Himanshu", lname: "Sharma", dob: "01/01/1990" }],
+  users: [{ id: "1", fname: "Himanshu", lname: "Sharma", dob: "1999-01-02" }],
 };
 
 const userReducer = (state, action) => {
